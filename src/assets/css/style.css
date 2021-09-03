@@ -1,0 +1,549 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #252C32;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+  }
+
+  h4,
+  p {
+    color: #F4E8DA;
+  }
+
+  div {
+    box-sizing: border-box;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  li {
+    border-bottom: 1px solid #eee;
+    padding: 0.7rem 1.3rem;
+  }
+
+  h5 {
+    margin: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .menu-list li .cupwrap {
+    position: relative;
+
+  }
+
+  .delteButton {
+    float: right;
+    background: #F4E8DA;
+    color: #5B4644;
+    border: none;
+    padding: 0.2rem 0.3rem;
+  }
+
+  .close {
+    font-size: 20px;
+    text-align: right;
+  }
+
+  .black-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    padding: 20px;
+    top: 0;
+  }
+
+  .white-bg {
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .recipe-page input {
+    height: 37px;
+    width: 80%;
+    background: #F4E8DA;
+    border: 1px solid #5B4644;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+  }
+
+  .recipe-page li {
+    padding: 0.7rem 0rem;
+  }
+
+  .recipe-page input[type="submit"] {
+    height: 39px;
+    width: 18%;
+    border: none;
+    background: #5B4644;
+    color: #F4E8DA;
+    position: relative;
+    top: 2px;
+    padding-left: 0px;
+
+  }
+
+  .menu-list li>div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    width: 70%;
+  }
+
+  .cup-wrap {
+    position: relative;
+    width: 30%;
+    height: 70px;
+  }
+
+  .cup-wrap>div {
+    bottom: 0;
+    left: 0;
+
+  }
+
+  .bar {
+    position: absolute;
+    height: 85%;
+    width: 2px;
+    left: 7%;
+    top: 7.5%;
+    background: #F4E8DA;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #F4E8DA;
+    box-shadow: 0px 0px 7px #f4e8da;
+    background-color: #eee;
+  }
+
+  .top {
+    background: #5B4644;
+    top: -1%;
+  }
+
+  .middle {
+    background: #87624F;
+    top: 38%;
+  }
+
+  .bottom {
+    background: #DAB7A3;
+    bottom: -1%;
+  }
+
+  .bold {
+    color: #87624F;
+    position: absolute;
+    top: -7%;
+    left: -17px;
+  }
+
+  .creamy {
+    color: #DAB7A3;
+    position: absolute;
+    bottom: -7%;
+    left: -27px;
+  }
+
+  .info {
+    width: 55%;
+    height: 100%;
+    position: absolute;
+    left: 43%;
+  }
+
+  .coffee-cups {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    top: 3%;
+  }
+
+  .handle {
+    position: absolute;
+    height: 20px;
+    width: 15px;
+    background: transparent;
+    border-radius: 50% 30%;
+    left: 95%;
+    top: 10%;
+    z-index: -1;
+    border: 2px solid #F4E8DA;
+  }
+
+  .cup {
+    position: absolute;
+    width: 70px;
+    height: 55px;
+    background: #252C32;
+    border: 2px solid #F4E8DA;
+    border-radius: 0 0 5rem 5rem;
+    left: 20%;
+  }
+
+  .cup-small {
+    position: absolute;
+    width: 55px;
+    height: 40px;
+    background: #252C32;
+    border: 2px solid #F4E8DA;
+    border-radius: 0 0 5rem 5rem;
+    left: 23%;
+    top: 28%
+  }
+
+  .cup-long {
+    position: absolute;
+    width: 60px;
+    height: 70px;
+    background: #252C32;
+    border: 2px solid #F4E8DA;
+    border-radius: 10% 10% 50% 50%;
+    left: 22%;
+  }
+
+  .doppio {
+    bottom: 0;
+    background: linear-gradient(to bottom, #252C32 40%, #5B4644 40%, #87624F 70%);
+  }
+
+  .americano {
+    background: linear-gradient(to bottom, #252C32 13%, #859FB5 13%, #859FB5 50%, #87624F 50%);
+  }
+
+  .macchiato {
+    background: linear-gradient(to bottom, #252C32 20%, #F4E8DA 20%, #F4E8DA 40%, #87624F 40%);
+  }
+
+  .flatwhite {
+    background: linear-gradient(to bottom, #252C32 10%, #F4E8DA 10%, #DAB7A3 60%, #87624F 65%, #5B4644 90%);
+  }
+
+  .cappuccino {
+    background: linear-gradient(to bottom, #F4E8DA 50%, #DAB7A3 50%, #DAB7A3 55%, #87624F 60%);
+  }
+
+  .latte {
+    background: linear-gradient(to bottom, #252C32 5%, #F4E8DA 5%, #F4E8DA 30%, #DAB7A3 30%, #DAB7A3 70%, #87624F 70%);
+  }
+
+  .latte.vanilalatte{
+    background: linear-gradient(to bottom, #252C32 5%, #ffd271 5%, #F4E8DA 30%, #DAB7A3 30%, #DAB7A3 70%, #87624F 0%);
+  }
+
+  h1 {
+    color: #F4E8DA;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  p {
+    color: #F4E8DA;
+    font-family: "Lora", serif;
+    text-transform: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-top: -5px;
+  }
+
+  .first,
+  .second,
+  .third,
+  .fourth,
+  .fifth,
+  .sixth {
+    position: absolute;
+  }
+
+  .first {
+    top: 7%;
+  }
+
+  .second {
+    top: 21%;
+  }
+
+  .third {
+    top: 36%;
+  }
+
+  .fourth {
+    top: 52%;
+  }
+
+  .fifth {
+    top: 65%;
+  }
+
+  .sixth {
+    top: 83%;
+  }
+
+  .small {
+    margin-top: -1px;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #F4E8DA;
+    font-size: 0.8rem;
+  }
+
+  .addIngridient-wrap{
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  .addIngridient-wrap input[type=text]{ 
+    background: none;
+    border: 2px solid #F4E8DA;
+    height: 28px;
+    color: #F4E8DA;
+    padding-left: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 7px #f4e8da;
+  }
+
+  .addIngridient-wrap input[type=submit]{ 
+    background: #F4E8DA;
+    border: none;
+    box-shadow: 0px 0px 7px #f4e8da;
+    color: #5B4644;
+    height: 29px;
+    position: relative;
+    top: 1px;
+    left: -1px;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    background: #F4E8DA;
+    font-size: 1.2rem;
+  }
+
+  .ingridinet-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-top: 32px;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-left: 20px;
+  }
+
+  .ingridinet-wrap>div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+
+
+  .espresso {
+    background: #5B4644;
+  }
+
+  .milk {
+    background: #DAB7A3;
+  }
+
+  .foam {
+    background: #F4E8DA;
+  }
+
+  .water {
+    background: #859FB5;
+  }
+
+  .vanila {
+    background: #ffd271;
+  }
+
+
+  .recipe-cup{
+    background: #252C32;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .recipe-cup .cup-wrap{
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    width: 70px;
+    height: fit-content;
+    margin: 0 auto;
+
+}
+
+.recipe-cup .cup-wrap .cup-small {
+    top: -38px;
+    left: 6px;
+}
+
+
+.shot{
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: -30px;
+    border-radius: 10px;
+}
+
+
+.drop{
+    animation: drop 0.5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+.drop-2{
+    animation: drop 0.5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.9s;
+}
+
+.drop-3{
+    animation: drop 0.5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+
+
+.recipe-cup .doppio {
+    bottom: 0;
+    background: #252C32;
+	animation: doppio 1.3s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+
+  .recipe-cup .americano {
+    bottom: 0;
+    background: #252C32;
+	animation: americano 1.8s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+
+
+  .recipe-cup .cappuccino  {
+    bottom: 0;
+    background: #252C32;
+	animation: cappuccino 1.8s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+
+
+@keyframes doppio {
+	0% {
+        background: linear-gradient(to bottom, #252C32 100%, #5B4644 0%, #87624F 0%);
+	}
+
+	50% {
+        background: linear-gradient(to bottom, #252C32 70%, #5B4644 20%, #87624F 35%);
+	}
+
+	100% {
+        background: linear-gradient(to bottom, #252C32 40%, #5B4644 40%, #87624F 70%);
+
+	}
+}
+
+
+@keyframes americano {
+	0% {
+        background: linear-gradient(to bottom, #252C32 100%, #859FB5 0%, #859FB5 0%, #87624F 0%);
+	}
+
+	50% {
+        background: linear-gradient(to bottom, #252C32 70%, #859FB5 0%, #859FB5 0%, #87624F 12.5%);
+	}
+
+    75% {
+        background: linear-gradient(to bottom, #252C32 50%, #859FB5 13%, #859FB5 25%, #87624F 50%);
+	}
+
+	100% {
+        background: linear-gradient(to bottom, #252C32 13%, #859FB5 13%, #859FB5 50%, #87624F 50%);
+
+	}
+}
+
+@keyframes cappuccino {
+	0% {
+        background: linear-gradient(to bottom, #252C32 100%,#F4E8DA 0%, #F4E8DA 0%, #87624F 0%);
+	}
+
+	50% {
+        background: linear-gradient(to bottom, #252C32 70%, #DAB7A3 0%, #DAB7A3 0%, #87624F 60%);
+	}
+
+    75% {
+        background: linear-gradient(to bottom,#252C32 50%, #DAB7A3 0%, #DAB7A3 0%, #87624F 60%);
+	}
+
+	100% {
+
+        background: linear-gradient(to bottom, #F4E8DA 50%, #DAB7A3 50%, #DAB7A3 55%, #87624F 60%);
+
+    
+	}
+}
+
+
+
+@keyframes drop {
+	0% {
+        top: 0px;
+	}
+
+	100% {
+       top:100px;
+
+	}
+}
+
+.color-panel{
+  width: 50px;
+  height: 50px;
+  ;
+}
